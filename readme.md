@@ -1,66 +1,71 @@
 Vampire
 ==============
 
-By Richard Evans
+Главный создатель пакета Ричард Эванс
+Оригинал [https://github.com/richard-evans/vampire](https://github.com/richard-evans/vampire)
 
-Vampire is a high performance general purpose code for the atomistic simulation of magnetic materials. Using a variety of common simulation methods it can calculate the equilibrium and dynamic magnetic properties of a wide variety of magnetic materials and phenomena, including ferro, ferri and antiferromagnets, core-shell nanoparticles, ultrafast spin dynamics, magnetic recording media, heat assisted magnetic recording, exchange bias, magnetic multilayer films and complete devices.
+Vampire -- это высокопроизводительный программный пакет общего назначения для атомистического моделирования магнитных материалов. В нём вы можете использовать разнообразные общие методы моделирования, в Vampire вы можете рассчитать равновесные и динамические магнитные свойства самых разных магнитных материалов и явлений, включая ферро-, ферри- и антиферромагнетики, наночастицы ядро-оболочка, сверхбыструю спиновую динамику, магнитную запись, магнитную запись с подогревом (heat-assisted или HAMR), обменное смещение, магнитные многослойные плёнки и комплектные устройства.
 
-Capabilities
+Возможности
 ---------------
-Vampire is designed to be highly flexible to deal with a wide variety of problems using a diverse set of simulation tools and methods. The capabilities of the code can be summarised broadly in terms of the simulation methods, standard problems, structural properties and features of the code, all of which can be combined to tackle almost any problem.
+Vampire разработан так, чтобы он мог быть очень гибким и мог справляться с широким спектром задач, с помощью разнообразного набора инструментов и методов моделирования. Возможности кода можно обобщить, говоря в широком смысле, с точки зрения методов моделирования, стандартных задач, структурных свойств и функциональных особенностей кода, эти вещи можно комбинировать так, чтобы решить практически любую проблему.
 
-**Simulation methods**
--Stochastic Landau-Lifshitz-Gilbert equation (spin dynamics)
--Monte Carlo metropolis
--Constrained Monte Carlo metropolis
+**Методы моделирования**
+- Стохастическое уравнение Ландау-Лифшеца-Гильберта (спиновая динамика)
+- Алгоритм Метрополиса (метод Монте-Карло)
+- Ограниченный алгоритм Метрополиса (метод Монте-Карло)
 
-**Standard calculations**
--Ultrafast spin dynamics
--Hysteresis loops
--Curie temperature
--Temperature dependent anisotropy
--Temperature dependent energy barriers
--Field cooling
--Heat assisted and conventional magnetic recording
--Laser induced spin dynamics
+**Стандартные вычисления**
+- Сверхбыстрая спиновая динамика
+- Петли гистерезиса
+- Температура Кюри
+- Температурная анизотропия
+- Энергетическая барьеры, зависимые от температуры
+- Охлаждение в поле
+- Магнитная запись с подогревом (HAMR) и обычная магнитная запись
+- Индуцированная лазером спиновая динамика
 
-**Structural properties**
--Bulk-like systems
--Thin films
--Nanoparticles - spheres, cubes, truncated octahedra, cylinders
--Voronoi granular structures
--Nanoparticle arrays
--Core-shell nanoparticles
--Multilayer thin films
--Interface roughness and intermixing
--Dilute magnetic systems
--Lithographically defined geometries
--SC, FCC, HCP, and BCC crystal structures
--User-defined atomic structures - for example from Molecular Dynamics simulations
+**Структурные свойства**
+- Объемная бесконечная система, имитированная при помощи периодических граничных условий (PBC)
+- Тонкие плёнки
+- Наночастицы -- сферы, кубы, усечённые октаэдры, цилиндры
+- Зернистые структуры Вороного
+- Массивы наночастиц
+- Наночастицы ядро-оболочка
+- Многослойные тонкие плёнки
+- Шероховатые границы раздела и взаимное перемешивание
+- Разбавленные магнитные системы
+- Определённая литографическим способом геометрия
+- Кристаллические структуры: простая кубическая, ГЦК, ГПУ, и ОЦК (SC, FCC, HCP, и BCC, соответственно)
+- Определённые пользователем атомные структуры -- например, полученные из моделирования молекулярной динамики
 
-**Magnetic properties**
--Ferromagnets
--Antiferromagnets
--Ferrimagnets
--Spin glass
--Single-ion, 2-ion and cubic anisotropies
--Scalar, vector and tensor forms of exchange including the DM interaction
--User-defined Hamiltonian from ab-initio Density Functional Theory (DFT) calculations
--Demagnetisation fields (macrocell approximation)
+**Магнитные свойства**
+- Ферромагнетики
+- Антиферромагнетики
+- Ферримагнетики
+- Спиновое стекло
+- Одноионная, двухионная и кубическая анизотропия
+- Скалярная, векторная и тензорная форма обменного взаимодействия, включая взаимодействие Дзялошинского-Мория (DMI)
+- Определённый пользователем гамильтониан из расчётов первых принципов (ab-initio) методом теории функционала плотности (DFT)
+- Поля размагничивания (приближение макроячейки)
 
-**Code features**
--Modular object-oriented C++
--Simple to use textfile input
--High performance code
--Parallelisation using the MPI library
--Variety of geometric decomposition algorithms
--Usable on a laptop to a supercomputer with thousands of cores
--Output to PoVRAY for visualisation and publication quality graphics
--Output to rasmol/jmol for structural inspection
--Minimal dependence on external libraries for portability
--Freely available open source code
+**Особенности кода**
+- Модульный, объектно-ориентированный C++
+- Простой ввод посредством текстового файла
+- Высокая производительность
+- Распараллеливание вычислений с помощью библиотеки MPI
+- Разнообразие алгоритмов геометрической декомпозиции
+- Работает и на ноутбуке, и на суперкомпьютере с тысячами ядер
+- Вывод в PoVRAY для визуализации и создания качественной графики в ваших публикациях
+- Вывод в rasmol/jmol для проверки структуры
+- Для лучшей переносимости с устройства на устройство у пакета минимальная зависимость от внешних библиотек
+- Свободно доступный пакет с открытым исходным кодом
 
-License
+Лицензия
 ---------------
-See the license file.
+Смотрите файл license (вратце файл говорит о том, что это лиценция GNU General Public License, что на русском значит "халява" -- прим. пер.). (В том же файле есть контакные данные автора пакета. -- прим. пер.)
+
+Дополнения в форк от 101Room для тех, кто видит программу в первый раз
+==============
+...
 
